@@ -1,20 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist</title>
+</head>
+<body>
+
+<h2>Playlist</h2>
+
 <audio id="player" controls></audio>
 
 <script>
 const tracks = [
-  "https://drive.google.com/uc?export=download&id=11R_C4GlXen2CKdIERRggAugQkgwxfAq5",
-  "https://drive.google.com/uc?export=download&id=1cV50rwp0ugt6i0ETqv6qigAYa46jhV-u",
-  "https://drive.google.com/uc?export=download&id=12SxJMLN6wNb1b3t7ulKS9UQoYu4Fm3vl",
-  "https://drive.google.com/uc?export=download&id=1cV50rwp0ugt6i0ETqv6qigAYa46jhV-u",
-  "https://drive.google.com/uc?export=download&id=1ShbA0JfqzVd6jEZjM7jlJncTk4Z1yAdg",
-  "https://drive.google.com/uc?export=download&id=1EaCgd0IfuKJXjn0oH43c9TGStoXCj0L3",
-  "https://drive.google.com/uc?export=download&id=1yX-dlAWp-oIAZX6gL9O35DKLu5RlF-6n",
-  "https://drive.google.com/uc?export=download&id=1cfKIAUPSYxzNJpuKOue-mfXsMRRmPbc8",
-  "https://drive.google.com/uc?export=download&id=1S77q2h3HovaEZQlPuP5r7ipdn4wIQPWh",
-  "https://drive.google.com/uc?export=download&id=17bGESOP5L2QB3G6-xPhMFNu_kgoWOuBk",
-  "https://drive.google.com/uc?export=download&id=1QvQLM9IZEON4b_5uDp0CdYT-9KMUjzMW",
-  "https://drive.google.com/uc?export=download&id=1eR2pB5UudOCs4Pvbbz7ETrWsAtEiKbpL",
-  "https://drive.google.com/uc?export=download&id=1Tr1DHtiuHUwRFelhB71XkhXqJikwZv9I"
+  "audio/01 Main Title.m4a",
+  "audio/05 Official Protection.m4a",
+  "audio/07 Footprints.m4a",
+  "audio/07 He's In The House.m4a",
+  "audio/09 Bon Fire.m4a",
+  "audio/15 ITSOTM - Motor Cycle Chase.m4a",
+  "audio/16 ITSOTM - Rya Vanishes.m4a",
+  "audio/20 Goodbye Belle.m4a",
+  "audio/22 Sweet Tooth.m4a",
+  "audio/Surrounded (Edit).m4a",
+  "audio/Time Turns Back (Edit).m4a",
+  "audio/With Love I Do This.mp3",
+  "audio/Preparing the Body.mp3"
 ];
 
 let index = 0;
@@ -22,11 +32,15 @@ const player = document.getElementById("player");
 
 player.src = tracks[index];
 
-player.onended = () => {
+player.addEventListener("ended", () => {
   index++;
   if (index < tracks.length) {
     player.src = tracks[index];
     player.play();
   }
-};
+});
 </script>
+
+</body>
+</html>
+
